@@ -258,7 +258,7 @@ pry(main)> item1.bids
 
 pry(main)> item1.close_bidding
 
-pry(main)> item1.add_bid(@attendee3, 70)
+pry(main)> item1.add_bid(attendee3, 70)
 
 pry(main)> item1.bids
 #=> {#<Attendee:0x00007ff177a45108 ...> => 22, #<Attendee:0x00007ff17816a4b0 ...> => 20}
