@@ -28,21 +28,15 @@ class Auction
   end
 
   def potential_revenue
-    sum = 0
-    bidded_items.each do |item|
-      sum += item.current_high_bid
+    bidded_items.sum do |item|
+      item.current_high_bid
     end
-    sum
   end
 
   def bidders
-    arr = []
-    bidded_items.each do |item|
-      item.bids.each do |bidder, amount|
-        arr << bidder.name
-      end
+    bidder_obj.map do |bidder|
+      bidder.name
     end
-    arr.uniq
   end
 
   def bidder_obj
