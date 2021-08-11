@@ -14,4 +14,19 @@ class Auction
       item.name
     end
   end
+
+  def unpopular_items
+    @items.find_all do |item|
+      item.bids == {}
+    end
+  end
+
+
+  def potential_revenue
+    sum = 0
+    @items.each do |item|
+      sum += item.current_high_bid if !unpopular_items.include?(item)
+    end
+    sum
+  end
 end
