@@ -13,6 +13,15 @@ RSpec.describe Attendee do
     expect(attendee.budget).to eq(50)
   end
 
+  it 'can buy an object' do
+    item1 = Item.new('Chalkware Piggy Bank')
+    attendee = Attendee.new(name: 'Megan', budget: '$50')
+
+    attendee.buy(item1, 30)
+
+    expect(attendee.budget).to eq(20)
+    expect(attendee.items).to eq([item1])
+  end
 
 
 end

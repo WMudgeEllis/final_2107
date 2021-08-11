@@ -1,8 +1,9 @@
 class Auction
-  attr_reader :items
+  attr_reader :items, :date
 
   def initialize
     @items =[]
+    @date =  Date.today.strftime("%d/%m/%Y")
   end
 
   def add_item(item)
@@ -57,5 +58,29 @@ class Auction
       h[bidder] = {:budget => bidder.budget, :items => object_by_bidder(bidder)}
     end
     h
+  end
+
+  def sell
+
+    bidder_info.each do |bidder, bid_info|
+      require "pry"; binding.pry
+      bid_info[:items].each do |arr|
+        #ugh, oh well. needed to be a method any way, probably
+        arr.each do |bidder, amount|
+
+        end
+      end
+    end
+
+  end
+
+
+  def close_auction
+    h = {}
+    sell
+    bidded_items.each do |item|
+      h[item]
+    end
+    h ={}
   end
 end
