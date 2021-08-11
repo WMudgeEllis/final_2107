@@ -10,7 +10,7 @@ In `students.txt`, put a list of your students Github handles.  For example:
 aziobrow
 dionew1
 memcmahon
-s-espinosa
+s-espino
 ```
 
 From the command line, run the following script, replacing `<repository_name` with the name of the challenge repo:
